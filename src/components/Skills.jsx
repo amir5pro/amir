@@ -1,0 +1,53 @@
+import React from "react";
+import { langs } from "../utils";
+import { motion } from "framer-motion";
+import backgroundImage from "../assets/black-thread-light.png";
+
+const Skills = () => {
+  return (
+    <div
+      className=" lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  min-h-screen pt-[50px] lg:px-10  pb-[60px] "
+      id="skills"
+    >
+      <div
+        style={{
+          backgroundColor: "white",
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+        className="pt-[30px] pb-[40px] px-[15px] rounded-xl shadow-sm "
+      >
+        <div className="text-text_color text-[30px]  font-black text-center">
+          Skills
+        </div>
+        <div className="grid grid-cols-3  sm:grid-cols-4 gap-[20px] md:grid-cols-5  lg:grid-cols-6 mt-[30px]   ">
+          {langs.map(({ name, logo }, index) => {
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 25 }}
+                transition={{ delay: index * 0.07 }}
+                key={index}
+                className="flex flex-col items-center gap-[10px]"
+              >
+                <div
+                  className="rounded-full shadow-2xl bg-white flex items-center justify-center h-[80px] w-[80px] sm:h-[100px] 
+              sm:w-[100px]"
+                >
+                  <img
+                    src={logo}
+                    alt="logo"
+                    className="h-[42px] w-[42px] sm:h-[50px] sm:w-[50px]"
+                  />
+                </div>
+                <h3 className="text-text_color">{name}</h3>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Skills;
