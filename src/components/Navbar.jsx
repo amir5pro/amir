@@ -47,7 +47,7 @@ const Navbar = () => {
               to={id}
               spy={true}
               smooth={true}
-              offset={-60}
+              offset={0}
               duration={600}
               activeClass="bg-primary-500 text-white"
               onSetActive={handleSetActive}
