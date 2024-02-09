@@ -35,26 +35,36 @@ const Navbar = () => {
     setHoveredStates(newHoveredStates);
   };
   const handleSetActive = (to) => {
-    setActiveSection(to);
+    setTimeout(() => {
+      setActiveSection(to);
+    }, 300); // Add a delay of 100 milliseconds before updating the active section
   };
 
+  const handleClick = (id) => {
+    setTimeout(() => {
+      setActiveSection(id);
+    }, 300);
+  };
   return (
     <div className="fixed bottom-10  flex items-center justify-center w-full lg:top-0   lg:right-7 lg:h-screen lg:w-16 z-[999] ">
       <div className="rounded-full px-5 lg:px-1 py-1 lg:py-6 bg-white opacity-85 lg:opacity-100 border-2 border-primary-100 shadow-2xl flex lg:flex-col items-center gap-4 z-[999] ">
         {Menu.map(({ Icon, name, id }, index) => {
           return (
             <Link
+              activeClass="active"
               to={id}
               spy={true}
               smooth={true}
               offset={0}
               duration={600}
-              activeClass="bg-primary-500 text-white"
               onSetActive={handleSetActive}
-              className="relative bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]"
+              className={`relative bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500
+               ${id === activeSection && "bg-primary-500 text-white"}
+                  text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
+              onClick={() => handleClick(id)}
             >
               <Icon className="" size={20} />
               {windowSizeNav >= 1024 && (
