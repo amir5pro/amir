@@ -5,7 +5,7 @@ import { Dropdown, Space } from "antd";
 import { apps } from "../utils";
 import { FaGithub } from "react-icons/fa";
 import { LuEye } from "react-icons/lu";
-import backgroundImage from "../assets/black-thread-light.png";
+import background from "../assets/black-thread.png";
 const Projects = () => {
   const [activeBtn, setActiveBtn] = useState("All");
   const [webApps, setWebApps] = useState([...apps]);
@@ -62,7 +62,7 @@ const Projects = () => {
       className="bg-opacity-60 min-h-screen rounded-3xl shadow-sm"
       style={{
         backgroundColor: "#fff8e0",
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${background})`,
       }}
       id="projects"
     >
