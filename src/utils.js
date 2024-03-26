@@ -1,8 +1,4 @@
 import { IoPerson } from "react-icons/io5";
-import { FaBrain } from "react-icons/fa6";
-import { FaProjectDiagram } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
-import { MdHome } from "react-icons/md";
 import { MdCastForEducation } from "react-icons/md";
 import { FaCogs } from "react-icons/fa";
 import css from "./assets/css.png";
@@ -26,34 +22,6 @@ import tanstack from "./assets/tanstack.svg";
 
 import linkedin from "./assets/linkedin.jpg";
 import worknest from "./assets/worknest.jpg";
-
-export const Menu = [
-  {
-    Icon: MdHome,
-    name: "Home",
-    id: "home",
-  },
-  {
-    Icon: IoPerson,
-    name: "About",
-    id: "about",
-  },
-  {
-    Icon: FaBrain,
-    name: "Skills",
-    id: "skills",
-  },
-  {
-    Icon: FaProjectDiagram,
-    name: "Projects",
-    id: "projects",
-  },
-  {
-    Icon: IoMdMail,
-    name: "Contact",
-    id: "contact",
-  },
-];
 
 export const Me = [
   {

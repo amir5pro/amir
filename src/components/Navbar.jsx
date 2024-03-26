@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Menu } from "../utils";
-import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
-const Navbar = () => {
-  const [activeSection, setActiveSection] = useState(null);
-  const [hoveredStates, setHoveredStates] = useState(
-    Array(Menu.length).fill(false)
-  );
+import { Tooltip } from "antd";
+import { FaBrain } from "react-icons/fa6";
+import { FaProjectDiagram } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { MdHome } from "react-icons/md";
+import { IoPerson } from "react-icons/io5";
 
+const Navbar = () => {
   const [windowSizeNav, setWindowSizeNav] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -21,71 +21,115 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const handleMouseEnter = (index) => {
-    if (windowSizeNav >= 1024) {
-      const newHoveredStates = [...hoveredStates];
-      newHoveredStates[index] = true;
-      setHoveredStates(newHoveredStates);
-    }
-  };
 
-  const handleMouseLeave = (index) => {
-    const newHoveredStates = [...hoveredStates];
-    newHoveredStates[index] = false;
-    setHoveredStates(newHoveredStates);
-  };
-  const handleSetActive = (to) => {
-    setTimeout(() => {
-      setActiveSection(to);
-    }, 300); // Add a delay of 100 milliseconds before updating the active section
-  };
-
-  const handleClick = (id) => {
-    setTimeout(() => {
-      setActiveSection(id);
-    }, 300);
-  };
   return (
     <div className="fixed bottom-10  flex items-center justify-center w-full lg:top-0   lg:right-7 lg:h-screen lg:w-16 z-[999] ">
-      <div className="rounded-full px-5 lg:px-1 py-1 lg:py-6 bg-white opacity-85 lg:opacity-100 border-2 border-primary-100 shadow-2xl flex lg:flex-col items-center gap-4 z-[999] ">
-        {Menu.map(({ Icon, name, id }, index) => {
-          return (
-            <Link
-              activeClass="active"
-              to={id}
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={600}
-              onSetActive={handleSetActive}
-              className={`relative bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500
-               ${id === activeSection && "bg-primary-500 text-white"}
+      <div className=" rounded-full px-5 lg:px-1 py-1 lg:py-6 bg-white opacity-85 lg:opacity-100 border-2 border-primary-100 shadow-2xl flex lg:flex-col items-center gap-4 z-[999] ">
+        <Tooltip
+          title={windowSizeNav >= 1024 ? "Home" : ""}
+          placement="left"
+          color="#ff8c00"
+          overlayStyle={{ position: "fixed" }}
+        >
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+             
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
-              key={index}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
-              onClick={() => handleClick(id)}
-            >
-              <Icon className="" size={20} />
-              {windowSizeNav >= 1024 && (
-                <AnimatePresence>
-                  {hoveredStates[index] && (
-                    <motion.div
-                      initial={{ opacity: 0, x: -25 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -25 }}
-                      className="hidden z-[999] lg:block absolute bg-white text-primary-500 rounded-md px-3  py-2 right-[70px] w-[70px] shadow-xl top-[6px]
-                   after:absolute after:-right-1 after:top-3 after:w-3 after:h-3
-                   after:bg-white after:rotate-45"
-                    >
-                      {name}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              )}
-            </Link>
-          );
-        })}
+          >
+            {" "}
+            <MdHome className="" size={20} />
+          </Link>
+        </Tooltip>
+        <Tooltip
+          title={windowSizeNav >= 1024 ? "About" : ""}
+          placement="left"
+          color="#ff8c00"
+          overlayStyle={{ position: "fixed" }}
+        >
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+             
+                  text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
+          >
+            {" "}
+            <IoPerson className="" size={20} />
+          </Link>
+        </Tooltip>
+        <Tooltip
+          title={windowSizeNav >= 1024 ? "Skills" : ""}
+          placement="left"
+          color="#ff8c00"
+          overlayStyle={{ position: "fixed" }}
+        >
+          <Link
+            activeClass="active"
+            to="skills"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+             
+                  text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
+          >
+            {" "}
+            <FaBrain className="" size={20} />
+          </Link>
+        </Tooltip>
+        <Tooltip
+          title={windowSizeNav >= 1024 ? "Projects" : ""}
+          placement="left"
+          color="#ff8c00"
+          overlayStyle={{ position: "fixed" }}
+        >
+          <Link
+            activeClass="active"
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+             
+                  text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
+          >
+            {" "}
+            <FaProjectDiagram className="" size={20} />
+          </Link>
+        </Tooltip>
+        <Tooltip
+          title={windowSizeNav >= 1024 ? "Contact" : ""}
+          placement="left"
+          color="#ff8c00"
+          overlayStyle={{ position: "fixed" }}
+        >
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+             
+                  text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
+          >
+            {" "}
+            <IoMdMail className="" size={20} />
+          </Link>
+        </Tooltip>
       </div>
     </div>
   );

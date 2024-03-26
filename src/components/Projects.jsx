@@ -147,50 +147,49 @@ const Projects = () => {
           <div className="grid gap-[40px] md:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:gap-[40px]">
             {webApps.map(({ name, web, git, pro, photo }, index) => {
               return (
-                <AnimatePresence key={name}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 25 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 25 }}
-                    transition={{ duration: 1 }}
-                    className="h-[355px] w-[305px] sm:w-[340px] sm:h-[380px] 2xl:w-[360px] 2xl:h-[400px]  bg-white shadow-xl rounded-2xl  flex flex-col items-center justify-center px-[10px] py-[15px]"
-                  >
-                    <div className="relative group rounded-2xl r ">
-                      <img
-                        src={photo}
-                        alt="photo"
-                        className="h-[285px] w-[285px]  sm:h-[310px] sm:w-[310px] 2xl:w-[330px] 2xl:h-[330px]  rounded-2xl  "
-                      />
-                      <div
-                        className="absolute  inset-0 bg-gradient-to-l backdrop-blur-3xl bg-[rgba(0,0,0,0.6)]
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 25 }}
+                  transition={{ delay: index * 0.3 }}
+                  key={index}
+                  className="h-[355px] w-[305px] sm:w-[340px] sm:h-[380px] 2xl:w-[360px] 2xl:h-[400px]  bg-white shadow-xl rounded-2xl  flex flex-col items-center justify-center px-[10px] py-[15px]"
+                >
+                  <div className="relative group rounded-2xl r ">
+                    <img
+                      src={photo}
+                      alt="photo"
+                      className="h-[285px] w-[285px]  sm:h-[310px] sm:w-[310px] 2xl:w-[330px] 2xl:h-[330px]  rounded-2xl  "
+                    />
+                    <div
+                      className="absolute  inset-0 bg-gradient-to-l backdrop-blur-3xl bg-[rgba(0,0,0,0.6)]
                 opacity-0 group-hover:opacity-80 transition-all duration-700 rounded-2xl"
-                      ></div>
+                    ></div>
 
-                      <div
-                        className="absolute inset-0 flex items-center justify-center gap-[20px] opacity-0 
+                    <div
+                      className="absolute inset-0 flex items-center justify-center gap-[20px] opacity-0 
                   group-hover:opacity-100"
+                    >
+                      <a
+                        href={git}
+                        target="_blank"
+                        className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
                       >
-                        <a
-                          href={git}
-                          target="_blank"
-                          className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
-                        >
-                          <FaGithub size={19} />
-                        </a>
-                        <a
-                          href={web}
-                          target="_blank"
-                          className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
-                        >
-                          <LuEye size={19} />
-                        </a>
-                      </div>
+                        <FaGithub size={19} />
+                      </a>
+                      <a
+                        href={web}
+                        target="_blank"
+                        className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
+                      >
+                        <LuEye size={19} />
+                      </a>
                     </div>
-                    <h4 className="text-primary-500 font-extrabold pt-[7px] text-[20px]">
-                      {name}
-                    </h4>
-                  </motion.div>
-                </AnimatePresence>
+                  </div>
+                  <h4 className="text-primary-500 font-extrabold pt-[7px] text-[20px]">
+                    {name}
+                  </h4>
+                </motion.div>
               );
             })}
           </div>

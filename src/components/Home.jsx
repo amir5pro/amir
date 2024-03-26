@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import me from "../assets/me.svg";
 import { Button, Flex } from "antd";
 import { motion } from "framer-motion";
@@ -6,9 +6,9 @@ import Typed from "typed.js";
 import { Link } from "react-scroll";
 
 const Home = () => {
-  const el = React.useRef(null);
+  const el = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const typed = new Typed(el.current, {
       strings: ["<span >A Full Stack Web Developer</span>"],
       typeSpeed: 70,
@@ -16,7 +16,6 @@ const Home = () => {
     });
 
     return () => {
-      // Destroy Typed instance during cleanup to stop animation
       typed.destroy();
     };
   }, []);
@@ -26,7 +25,7 @@ const Home = () => {
       className="flex  flex-col pt-[100px] md:pt-0 gap-10 md:gap-0 md:flex-row lg:flex-row items-center  md:justify-between lg:mr-24 mx-6 lg:ml-[96px]   lg:px-10  2xl:mx-40  min-h-screen "
     >
       <motion.div
-        initial={{ y: 60, opacity: 0 }}
+        initial={{ y: -60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ type: "tween", duration: 0.9 }}
         className="flex flex-col gap-[30px] items-center md:items-start text-center md:text-start"
@@ -66,7 +65,7 @@ const Home = () => {
       </motion.div>
       <div>
         <motion.img
-          initial={{ y: -60, opacity: 0 }}
+          initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: "tween", duration: 0.9 }}
           src={me}
