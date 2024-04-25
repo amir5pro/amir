@@ -19,9 +19,9 @@ const Projects = () => {
     const filteredApps = apps.filter((app) => app.pro === "react");
     setWebApps(filteredApps);
   };
-  const handleButtonMern = () => {
-    setActiveBtn("Mern");
-    const filteredApps = apps.filter((app) => app.pro === "mern");
+  const handleButtonNext = () => {
+    setActiveBtn("Next js");
+    const filteredApps = apps.filter((app) => app.pro === "nextjs");
     setWebApps(filteredApps);
   };
 
@@ -37,9 +37,9 @@ const Projects = () => {
       onClick: handleButtonReact,
     },
     {
-      label: "Mern",
-      key: "Mern",
-      onClick: handleButtonMern,
+      label: "Next js",
+      key: "nextjs",
+      onClick: handleButtonNext,
     },
   ];
 
@@ -135,13 +135,13 @@ const Projects = () => {
                 rotate: "2.5deg",
               }}
               className={`px-[10px] py-[7px] w-[100px] border-2 border-primary-500 rounded-lg ${
-                activeBtn === "Mern"
+                activeBtn === "Next js"
                   ? "bg-primary-500 text-white"
                   : "bg-white text-primary-500 "
               }`}
-              onClick={() => handleButtonMern()}
+              onClick={() => handleButtonNext()}
             >
-              Mern
+              Next js
             </motion.button>
           </div>
           <div className="grid gap-[40px] md:gap-[25px] grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:gap-[40px]">

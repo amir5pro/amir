@@ -132,7 +132,7 @@ export const apps = [
     name: "worknest",
     web: "https://worknest.onrender.com",
     git: "https://github.com/amir5pro/WorkNest",
-    pro: "mern",
+    pro: "react",
     photo: worknest,
   },
 ];

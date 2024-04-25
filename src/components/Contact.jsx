@@ -38,10 +38,10 @@ const Contact = () => {
     <>
       <div
         id="contact"
-        className="lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  min-h-screen pt-[60px] pb-[30px]
+        className="lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  min-h-screen pt-[60px] pb-[30px] 
      "
       >
-        <div className="text-text_color text-[30px]  font-black text-center mb-[40px]">
+        <div className="text-text_color text-[30px]  font-black text-center mb-[30px] md:mb-[70px]">
           Contact-Me
         </div>
 
