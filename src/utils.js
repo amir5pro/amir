@@ -22,6 +22,7 @@ import tanstack from "./assets/tanstack.svg";
 
 import linkedin from "./assets/linkedin.jpg";
 import worknest from "./assets/worknest.jpg";
+import fastedit from "./assets/fastedit.png";
 
 export const Me = [
   {
@@ -134,5 +135,12 @@ export const apps = [
     git: "https://github.com/amir5pro/WorkNest",
     pro: "react",
     photo: worknest,
+  },
+  {
+    name: "Fast edit",
+    web: "https://fast-edit.web.app/",
+    git: "https://github.com/amir5pro/fast-edit",
+    pro: "react",
+    photo: fastedit,
   },
 ];
