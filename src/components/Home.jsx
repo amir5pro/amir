@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import me from "../assets/me.svg";
-import { Button, Flex } from "antd";
+import { Button, Flex, Typography } from "antd";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
 import { Link } from "react-scroll";
+
+const { Text } = Typography;
 
 const Home = () => {
   const el = useRef(null);
@@ -11,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: ["<span >A Full Stack Web Developer</span>"],
-      typeSpeed: 70,
+      typeSpeed: 90,
       showCursor: false,
     });
 
@@ -30,15 +32,20 @@ const Home = () => {
         transition={{ type: "tween", duration: 0.9 }}
         className="flex flex-col gap-[30px] items-center md:items-start text-center md:text-start"
       >
-        <div className="text-text_color font-black text-[30px] ">
-          <h1>Hey,</h1>
+        <div>
           <h1>
-            I am Amir , <span className="text-primary-500" ref={el} />
+            <Text strong className="text-[30px]">
+              Hey,
+            </Text>
           </h1>
+
+          <Text strong className="text-[30px]">
+            I am Amir , <span className="text-primary-500" ref={el} />
+          </Text>
         </div>
-        <h1 className="text-text_secondary_color text-[20px]">
+        <Text className=" text-[20px]">
           I Transform ideas into elegant web solutions with full-stack expertise
-        </h1>
+        </Text>
         <Flex gap="small" vertical style={{ width: "180px" }}>
           <Link
             to="projects"

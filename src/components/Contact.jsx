@@ -1,12 +1,16 @@
 import React from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Typography } from "antd";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import Footer from "./Footer";
 import { toast } from "react-toastify";
+
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const { Text } = Typography;
+
 const Contact = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
@@ -41,8 +45,10 @@ const Contact = () => {
         className="lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  min-h-screen pt-[60px] pb-[30px] 
      "
       >
-        <div className="text-text_color text-[30px]  font-black text-center mb-[30px] md:mb-[70px]">
-          Contact-Me
+        <div className=" text-center mb-[30px] md:mb-[70px]">
+          <Text className="text-[30px]" strong>
+            Contact-Me
+          </Text>
         </div>
 
         <motion.div

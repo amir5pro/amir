@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
+import { Dropdown, Space, Typography } from "antd";
 import { apps } from "../utils";
 import { FaGithub } from "react-icons/fa";
 import { LuEye } from "react-icons/lu";
 import background from "../assets/black-thread.png";
+
+const { Text } = Typography;
+
 const Projects = () => {
   const [activeBtn, setActiveBtn] = useState("All");
   const [webApps, setWebApps] = useState([...apps]);
@@ -61,14 +64,16 @@ const Projects = () => {
     <div
       className="bg-opacity-60 min-h-screen rounded-3xl shadow-sm"
       style={{
-        backgroundColor: "#fff8e0",
+        backgroundColor: "#e3f2fd",
         backgroundImage: `url(${background})`,
       }}
       id="projects"
     >
       <div className="   lg:mr-24 mx-4 lg:ml-[96px]  2xl:mx-40  min-h-screen pt-[60px]  pb-[60px]   ">
-        <div className="text-text_color text-[30px]  font-black text-center   ">
-          Projects
+        <div className="  text-center   ">
+          <Text className="text-[30px]" strong>
+            Projects
+          </Text>
         </div>
         <div className="mt-[30px] flex flex-col items-center justify-center gap-[35px]">
           <div className="sm:hidden">
@@ -177,18 +182,20 @@ const Projects = () => {
                       >
                         <FaGithub size={19} />
                       </a>
-                      <a
-                        href={web}
-                        target="_blank"
-                        className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
-                      >
-                        <LuEye size={19} />
-                      </a>
+                      {web && (
+                        <a
+                          href={web}
+                          target="_blank"
+                          className=" border-2 border-primary-500 rounded-lg p-[7px] text-primary-500 hover:bg-primary-500 hover:text-white"
+                        >
+                          <LuEye size={19} />
+                        </a>
+                      )}
                     </div>
                   </div>
-                  <h4 className="text-primary-500 font-extrabold pt-[7px] text-[20px]">
+                  <Text strong className="text-primary-500  pt-[7px] text-[20px]">
                     {name}
-                  </h4>
+                  </Text>
                 </motion.div>
               );
             })}

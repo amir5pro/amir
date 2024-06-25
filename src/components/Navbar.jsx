@@ -24,11 +24,11 @@ const Navbar = () => {
 
   return (
     <div className="fixed bottom-10  flex items-center justify-center w-full lg:top-0   lg:right-7 lg:h-screen lg:w-16 z-[999] ">
-      <div className=" rounded-full px-5 lg:px-1 py-1 lg:py-6 bg-white opacity-85 lg:opacity-100 border-2 border-primary-100 shadow-2xl flex lg:flex-col items-center gap-4 z-[999] ">
+      <div className=" rounded-full px-5 lg:px-1 py-1 lg:py-6 bg-white opacity-85 lg:opacity-100 border-2 border-primary-50 shadow-2xl flex lg:flex-col items-center gap-4 z-[999] ">
         <Tooltip
           title={windowSizeNav >= 1024 ? "Home" : ""}
           placement="left"
-          color="#ff8c00"
+          color="#2196f3"
           overlayStyle={{ position: "fixed" }}
         >
           <Link
@@ -38,7 +38,7 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={600}
-            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+            className={`   rounded-full p-3 lg:hover:bg-primary-500 group
              
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
           >
@@ -49,7 +49,7 @@ const Navbar = () => {
         <Tooltip
           title={windowSizeNav >= 1024 ? "About" : ""}
           placement="left"
-          color="#ff8c00"
+          color="#2196f3"
           overlayStyle={{ position: "fixed" }}
         >
           <Link
@@ -59,7 +59,7 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={600}
-            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+            className={`   rounded-full p-3 lg:hover:bg-primary-500 group
              
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
           >
@@ -70,7 +70,7 @@ const Navbar = () => {
         <Tooltip
           title={windowSizeNav >= 1024 ? "Skills" : ""}
           placement="left"
-          color="#ff8c00"
+          color="#2196f3"
           overlayStyle={{ position: "fixed" }}
         >
           <Link
@@ -80,7 +80,7 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={600}
-            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+            className={`   rounded-full p-3 lg:hover:bg-primary-500 group
              
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
           >
@@ -91,7 +91,7 @@ const Navbar = () => {
         <Tooltip
           title={windowSizeNav >= 1024 ? "Projects" : ""}
           placement="left"
-          color="#ff8c00"
+          color="#2196f3"
           overlayStyle={{ position: "fixed" }}
         >
           <Link
@@ -101,7 +101,7 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={600}
-            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+            className={`   rounded-full p-3 lg:hover:bg-primary-500 group
              
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
           >
@@ -112,7 +112,7 @@ const Navbar = () => {
         <Tooltip
           title={windowSizeNav >= 1024 ? "Contact" : ""}
           placement="left"
-          color="#ff8c00"
+          color="#2196f3"
           overlayStyle={{ position: "fixed" }}
         >
           <Link
@@ -122,7 +122,7 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={600}
-            className={`  bg-primary-50 rounded-full p-3 lg:hover:bg-primary-500 group
+            className={`   rounded-full p-3 lg:hover:bg-primary-500 group
              
                   text-primary-500 lg:hover:text-white cursor-pointer transition-opacity duration-1000 text-[12px]`}
           >

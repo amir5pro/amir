@@ -20,6 +20,7 @@ import restapi from "./assets/restapi.png";
 import tailwind from "./assets/tailwind.png";
 import tanstack from "./assets/tanstack.svg";
 
+import eVote from "./assets/e-vote.jpg";
 import linkedin from "./assets/linkedin.jpg";
 import worknest from "./assets/worknest.jpg";
 import fastedit from "./assets/fastedit.png";
@@ -122,13 +123,12 @@ export const langs = [
 
 export const apps = [
   {
-    name: "Linked-in",
-    web: "https://linkedin-clone-c7761.web.app",
-    git: "https://github.com/amir5pro/linkedin",
+    name: "Fast edit",
+    web: "https://fast-edit.web.app/",
+    git: "https://github.com/amir5pro/fast-edit",
     pro: "react",
-    photo: linkedin,
+    photo: fastedit,
   },
-
   {
     name: "worknest",
     web: "https://worknest.onrender.com",
@@ -136,11 +136,20 @@ export const apps = [
     pro: "react",
     photo: worknest,
   },
+
   {
-    name: "Fast edit",
-    web: "https://fast-edit.web.app/",
-    git: "https://github.com/amir5pro/fast-edit",
+    name: "E-vote",
+    web: "https://e-voteuser.onrender.com/",
+    git: "https://github.com/amir5pro/e-voteUser",
     pro: "react",
-    photo: fastedit,
+    photo: eVote,
+  },
+
+  {
+    name: "Linked-in",
+    // web: "https://linkedin-clone-c7761.web.app",
+    git: "https://github.com/amir5pro/linkedin",
+    pro: "react",
+    photo: linkedin,
   },
 ];

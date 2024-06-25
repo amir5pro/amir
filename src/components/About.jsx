@@ -1,22 +1,25 @@
 import React from "react";
-import { Button, Flex } from "antd";
+import { Button, Flex, Typography } from "antd";
 import { motion } from "framer-motion";
 import { Me } from "../utils";
 import backgroundImage from "../assets/black-thread-light.png";
 import { Link } from "react-scroll";
 
+const { Text } = Typography;
 const About = () => {
   return (
     <div
       className=" flex flex-col bg-opacity-60 justify-evenly bg-primary-50 lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  min-h-screen  md:pt-[20px] lg:px-10  rounded-3xl  shadow-lg  "
       style={{
-        backgroundColor: "#fff8e0",
+        backgroundColor: "#e3f2fd",
         backgroundImage: `url(${backgroundImage})`,
       }}
       id="about"
     >
-      <div className="text-text_color text-[30px] mt-[60px] mb-[40px] 2xl:mt-0 2xl:mb-0 font-black text-center ">
-        About-Me
+      <div className="  mt-[60px] mb-[40px] 2xl:mt-0 2xl:mb-0  text-center ">
+        <Text className="text-[30px]" strong>
+          About-Me
+        </Text>
       </div>
       <motion.div
         initial={{ y: 70, opacity: 0 }}
@@ -26,19 +29,22 @@ const About = () => {
       >
         <div className="flex flex-col gap-5 items-center">
           <div
-            className="text-text_color   max-w-[500px] text-justify mx-[10px] sm:mx-0 sm:max-w-[570px] md:max-w-[700px]
+            className="   max-w-[500px] text-justify mx-[10px] sm:mx-0 sm:max-w-[570px] md:max-w-[700px]
               lg:max-w-[750px]  leading-[25px]  xl:max-w-[850px] 2xl:max-w-[950px]"
           >
-            👋 Hello! I'm{" "}
-            <span className="text-primary-500  ">Amir Miftah</span>, a
-            passionate full-stack web developer based in Addis Ababa. As a
-            freelancer, I transform ideas into captivating digital experiences.
-            With a keen eye for detail and love for problem-solving, I
-            specialize in crafting responsive and user-friendly web solutions.
-            From dynamic front-end interfaces to robust back-end systems, I
-            enjoy the challenge of creating seamless, efficient, and visually
-            appealing websites. So, what are you waiting for? Click the button
-            below and let's bring your digital ideas to life!🚀
+            <Text>
+              👋 Hello! I'm{" "}
+              <span className="text-primary-500  ">Amir Miftah</span>, a
+              passionate full-stack web developer based in Addis Ababa. As a
+              freelancer, I transform ideas into captivating digital
+              experiences. With a keen eye for detail and love for
+              problem-solving, I specialize in crafting responsive and
+              user-friendly web solutions. From dynamic front-end interfaces to
+              robust back-end systems, I enjoy the challenge of creating
+              seamless, efficient, and visually appealing websites. So, what are
+              you waiting for? Click the button below and let's bring your
+              digital ideas to life!🚀
+            </Text>
           </div>
           <div>
             <Flex gap="small" vertical style={{ width: "120px" }}>
@@ -81,9 +87,9 @@ const About = () => {
                   lg:w-[230px] xl:w-[270px] 2xl:w-[320px]  items-center gap-[5px] "
               >
                 <Icon className="text-primary-500" />
-                <h1 className="text-[23px] text-primary-500">{title}</h1>
-                <h2 className="text-[14px] text-text_color">{data}</h2>
-                <h2 className="text-[14px] text-text_color">{description}</h2>
+                <Text className="text-[23px] text-primary-500">{title}</Text>
+                <Text className="text-[14px] ">{data}</Text>
+                <Text className="text-[14px] ">{description}</Text>
               </div>
             );
           })}

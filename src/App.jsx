@@ -10,17 +10,19 @@ import "react-toastify/dist/ReactToastify.css";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import PreLoader from "./components/PreLoader";
 const App = () => {
   return (
     <ConfigProvider
       theme={{
         token: {
           // Seed Token
-          colorPrimary: "#ff8c00",
+          colorPrimary: "#2196f3",
         },
       }}
     >
-      <div className="w-full  min-h-screen bg-white font-sora ">
+      <div className="w-full  min-h-screen bg-white  ">
+        <PreLoader />
         <ToastContainer position="top-center" />
 
         <Header />

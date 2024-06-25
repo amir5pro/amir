@@ -4,6 +4,10 @@ import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
+
+import { Typography } from "antd";
+
+const { Text } = Typography;
 const Header = () => {
   const phoneNumber = "+251963379162";
 
@@ -16,37 +20,45 @@ const Header = () => {
     }
   };
   return (
-    <div className="fixed top-0 w-full flex items-center justify-between md:px-[24px] px-6 lg:px-[136px] 2xl:px-[200px] h-[50px] bg-white opacity-70 z-[999]">
-      <h3 className="text-primary-500 text-[21px] sm:text-[22px] font-black ">
+    <div className="fixed top-0 w-full flex items-center justify-between md:px-[24px] px-6 lg:px-[136px] 2xl:px-[200px] h-[50px] bg-white  z-[999]">
+      <Text strong className="text-primary-500 text-[21px] sm:text-[22px]  ">
         Amir Miftah
-      </h3>
-      <div className="flex items-center gap-[25px] text-text_color ">
+      </Text>
+      <div className="flex items-center gap-[25px]  ">
         <a href="https://github.com/amir5pro" target="_blank">
           {" "}
-          <FaGithub
-            size={21}
-            className=" hover:text-primary-500 cursor-pointer"
-          />
+          <Text strong>
+            {" "}
+            <FaGithub
+              size={21}
+              className=" hover:text-primary-500 cursor-pointer"
+            />
+          </Text>
         </a>
         <a href="mailto:amirdeveloper55@gmail.com" target="_blank">
           {" "}
-          <IoMdMail
-            size={21}
-            className=" hover:text-primary-500 cursor-pointer"
-          />
+          <Text strong>
+            <IoMdMail
+              size={21}
+              className=" hover:text-primary-500 cursor-pointer"
+            />
+          </Text>
         </a>
         <a href="https://t.me/atth6" target="_blank">
-          <FaTelegramPlane
+          <Text strong>
+            <FaTelegramPlane
+              size={21}
+              className=" hover:text-primary-500 cursor-pointer"
+            />
+          </Text>
+        </a>
+        <Text strong>
+          <FaPhoneAlt
             size={21}
             className=" hover:text-primary-500 cursor-pointer"
+            onClick={() => handlePhoneIconClick()}
           />
-        </a>
-
-        <FaPhoneAlt
-          size={21}
-          className=" hover:text-primary-500 cursor-pointer"
-          onClick={() => handlePhoneIconClick()}
-        />
+        </Text>
       </div>
     </div>
   );

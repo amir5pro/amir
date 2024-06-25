@@ -2,7 +2,8 @@ import React from "react";
 import { langs } from "../utils";
 import { motion } from "framer-motion";
 import backgroundImage from "../assets/black-thread-light.png";
-
+import { Typography } from "antd";
+const { Text } = Typography;
 const Skills = () => {
   return (
     <div className="   min-h-screen pt-[50px] pb-[60px] " id="skills">
@@ -14,8 +15,10 @@ const Skills = () => {
         className="pt-[30px] pb-[40px] px-[15px] rounded-3xl shadow-sm "
       >
         <div className="lg:mr-24 mx-6 lg:ml-[96px]  2xl:mx-40  lg:px-10 ">
-          <div className="text-text_color text-[30px]  font-black text-center">
-            Skills
+          <div className="  text-center">
+            <Text className="text-[30px]" strong>
+              Skills
+            </Text>
           </div>
           <div className="grid grid-cols-3  sm:grid-cols-4 gap-[20px] md:grid-cols-5  lg:grid-cols-6 mt-[30px]   ">
             {langs.map(({ name, logo }, index) => {
@@ -38,7 +41,7 @@ const Skills = () => {
                       className="h-[42px] w-[42px] sm:h-[50px] sm:w-[50px]"
                     />
                   </div>
-                  <h3 className="text-text_color">{name}</h3>
+                  <Text>{name}</Text>
                 </motion.div>
               );
             })}

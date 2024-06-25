@@ -7,10 +7,13 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#fff8e0",
-          100: "#ffebbf",
-          500: "#ff8c00",
-          900: "#7c4500",
+          50: "#e3f2fd",
+          100: "#bbdefb",
+          200: "#90caf9",
+          300: "#64b5f6",
+          400: " #42a5f5",
+          500: "#2196f3",
+          900: "#0d47a1",
         },
         grey: {
           50: "#f8fafc",
@@ -27,9 +30,6 @@ export default {
         d_text_color: "#f0f0f0",
         d_text__secondary_color: "#cbd5e1",
       },
-    },
-    fontFamily: {
-      sora: ["sora", "inter", "sans-serif"],
     },
   },
   plugins: [require("daisyui")],
